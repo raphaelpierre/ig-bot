@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scalping Bot Dashboard</title>
+</head>
+<body>
+    <h1>Scalping Bot Dashboard</h1>
+    <h2>Total P&L: {{ total_pnl }}</h2>
+    <h3>Trade History</h3>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Symbol</th>
+            <th>Action</th>
+            <th>Entry Price</th>
+            <th>Exit Price</th>
+            <th>PnL</th>
+        </tr>
+        {% for trade in trades %}
+        <tr>
+            <td>{{ trade["Timestamp"] }}</td>
+            <td>{{ trade["Symbol"] }}</td>
+            <td>{{ trade["Action"] }}</td>
+            <td>{{ trade["Entry Price"] }}</td>
+            <td>{{ trade["Exit Price"] }}</td>
+            <td>{{ trade["PnL"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h3>P&L Chart</h3>
+    <img src="/static/pnl_chart.png" alt="PnL Chart">
+</body>
+</html>
